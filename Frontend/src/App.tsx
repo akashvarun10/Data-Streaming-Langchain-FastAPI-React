@@ -55,6 +55,7 @@ const ChatComponent: React.FC = () => {
         alignItems: 'center',
         flexDirection: 'column',
         padding: '20px',
+        color: 'white',
       }}
     >
       <Grid container spacing={2} style={{ width: '100%' }}>

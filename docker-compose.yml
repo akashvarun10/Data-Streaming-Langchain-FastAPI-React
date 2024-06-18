@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "8000:80"  # Expose backend API on port 8000
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: uvicorn main:app --host 0.0.0.0 --port 80
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "5173:5173"  # Map frontend port 5173 to host
+    environment:
+      - VITE_HOST=0.0.0.0
+    command: npm run dev
